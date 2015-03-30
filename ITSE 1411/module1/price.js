@@ -1,0 +1,10 @@
+var price1 = 5.3265;
+var price2 = 8.356;
+var price3 = 10;
+document.write("<hr>Basic templates prizes inclusive of 4% tax and minimal shipping charges :");
+document.write("<ol>");
+document.write("<li>5 x 5 : $"+ price1.toFixed(2) + " plus Tax :" + ((4 *price1)/100).toFixed(2) );
+document.write("<li>10 x 8 : $"+ price2.toFixed(2) + " plus Tax :" + ((4 *price2)/100).toFixed(2) );
+document.write("<li>11 x 9 : $"+ price3.toFixed(2) + " plus Tax :" + ((4 *price3)/100).toFixed(2) );
+document.write("</ol>");
+document.write("<hr>");

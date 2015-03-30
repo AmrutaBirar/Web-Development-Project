@@ -1,0 +1,53 @@
+p{
+   color: #4B0082;
+   text-align: center;
+}
+
+h1{
+    color: #800080;
+    text-align: center;
+    background-image: url("project1images/lace2.jpg");
+    background-size: contain
+}
+
+div{
+    color: #000000;
+    background-color: #FFFAF0;
+    text-align: center;
+    
+}
+
+a{
+    color: #9932CC;
+    
+}
+
+h3{
+    background-color:#D8BFD8;
+    text-align: center;
+}
+
+table{
+  margin: auto;
+  width:50%;
+  border: thin;
+  
+}
+tr:nth-of-type(even){
+    background-color:#D8BFD8;   
+}
+tr:nth-of-type(odd){
+    background-color:#66CDAA;
+    
+}
+tr:first-of-type{
+    background-color:#DDA0DD;
+    
+}
+
+td{
+    text-align: center;
+}
+td:first-child{
+    text-align: left;
+}
