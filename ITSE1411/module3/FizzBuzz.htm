@@ -1,0 +1,57 @@
+<!DOCTYPE html >
+<html lang="en" >
+<head>
+    <title>
+      Numbers example
+    </title>    
+    <meta charset="utf-8" />
+
+
+ <!-- This is where your link tag goes when linking to an external style sheet. -->
+ 
+<!--This is the format you will use when entering JavaScript -->    
+<script type="text/javascript">
+/* <![CDATA[ */
+
+// your JavaScript instructions will go here
+
+/* ]]> */
+</script>    
+    
+</head>
+
+  <body> 
+ <div> 
+<!-- Your XHTML here -->
+  
+<script type="text/javascript">
+/* <![CDATA[ */
+
+//document.write("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;")
+for(i = 1; i<= 90;i++)
+{
+    
+                if (i%3 == 0 && i%5 == 0)
+                    document.write(i+" = FizzBuzz <br />");
+                else
+                if (i % 3 == 0)
+                    document.write(i+" = Fizz&nbsp;")
+                else
+                if (i % 5 == 0)
+                    document.write(i+" = Buzz&nbsp;")
+                else
+                    document.write(i+"&nbsp;");
+   
+ 
+}
+/* ]]> */
+</script> 
+
+
+<!-- external javascript for validation -->  
+<script type="text/javascript" src="../validation.js">
+</script>    
+
+</div>
+  </body>
+  </html>

@@ -1,0 +1,37 @@
+BODY
+{
+    background-color: #FFFFFF;
+    margin-left: 0px;
+    margin-top: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+P
+{
+margin-left: 20px;
+}
+TD.ImageBack
+{
+    background-image: url(images/bg.gif);
+}
+TD.ImageBack2
+{
+    background-image: url(images/bg.gif);
+}
+TD.ImageBack3
+{
+    background-image: url(images/greybar.gif);
+}
+TD.ImageBack4
+{
+    background-image: url(images/but_bg.gif);
+}
+TR.RowBackColor
+{
+    background-color: #ffab0a;
+}
+
+IMG.NoBorder
+{
+    border: 0;
+}

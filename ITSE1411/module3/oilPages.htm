@@ -1,0 +1,49 @@
+<!DOCTYPE html >
+<html lang="en" >
+<head>
+    <title>
+      Oil Price's
+    </title>    
+    <meta charset="utf-8" />
+
+<!-- This is where your link tag goes when linking to an external style sheet. -->   
+    
+</head>
+
+<body> 
+ <div>
+    <p>Click the button to demonstrate the prompt box.</p>
+
+    <button onclick="myFunction()">Try it</button>
+   
+    <script type="text/javascript">
+    /* <![CDATA[ */
+
+    document.write("<p id='demo'></p>");
+    
+    function myFunction() {
+        var oilPrice = parseInt(prompt("Enter price of oil barrel"));
+        if (oilPrice != null)
+        {
+            if (oilPrice >= 50 && oilPrice <= 60)
+            {
+            document.getElementById("demo").innerHTML = "Oil Prices are between $50.00 and $60.00 a barrel.";
+            }
+            else
+            {    
+            document.getElementById("demo").innerHTML = "Oil Prices are NOT between $50.00 and $60.00 a barrel.";
+            }
+        }
+    }       
+    
+    /* ]]> */
+    </script> 
+  
+
+   <!-- external javascript for validation -->  
+    <script type="text/javascript" src="../validation.js">
+    </script>    
+    
+</div>
+ </body>
+ </html>
