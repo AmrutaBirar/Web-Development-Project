@@ -1,0 +1,260 @@
+/* CSS Document */
+
+body{
+margin:0px;}
+
+.header{
+background-image:url(image/header_left.jpg);
+background-repeat:no-repeat;
+width:298px;
+height:175px;
+}
+
+.header1{
+background-image:url(image/header_right.jpg);
+background-repeat:no-repeat;
+width:480px;
+height:175px;
+}
+
+.menu{
+background-image:url(image/menu.jpg);
+background-repeat:no-repeat;
+width:298px;
+height:201px;
+}
+
+.img{
+background-image:url(image/middle_right.jpg);
+background-repeat:no-repeat;
+width:480px;
+height:201px;
+}
+
+.mid_img {
+background-image:url(image/mid_img.jpg);
+background-repeat:no-repeat;
+width:778px;
+height:499px;
+}
+
+.footer {
+background-image:url(image/footer.jpg);
+background-repeat:no-repeat;
+width:778px;
+height:67px;
+}
+
+.logotxt{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:19px;
+color:#9E9E9E;
+}
+
+.logotxt1{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:20px;
+color:#226DA2;
+}
+
+.logotxt2{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:10px;
+color:#9E9E9E;
+}
+
+.search{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:10px;
+color:#9E9E9E;
+}
+
+.form{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;
+height:18px;
+}
+
+.ok{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:10px;
+font-weight:bold;
+color:#ffffff;
+}
+
+
+.home{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:10px;
+color:#3B4350;
+}
+
+.home a{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:10px;
+color:#3B4350;
+text-decoration:none;
+}
+
+.home a:hover{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:10px;
+color:#3B4350;
+text-decoration:none;
+}
+
+.home1{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-weight:bold;
+font-size:14px;
+color:#FFFFFF;
+text-decoration:none;
+}
+
+.home1 a{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-weight:bold;
+font-size:14px;
+color:#FFFFFF;
+text-decoration:none;
+}
+
+.home1 a:hover{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-weight:bold;
+font-size:14px;
+color:#FFFFFF;
+text-decoration:none;
+}
+
+.linktxt{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:10px;
+color:#2276B2;
+}
+
+.weltxt{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:14px;
+color:#FFFFFF;
+}
+.content{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:9px;
+font-weight:bold;
+color:#FF8E00;
+}
+
+.total{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:9px;
+font-weight:bold;
+color:#FF8E00;
+border: none;
+}
+
+.content1{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:9px;
+color:#4F4F4F;
+}
+
+.content_2{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:8px;
+color:#4F4F4F;
+}
+
+.content2{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:9px;
+color:#FF8E00;
+}
+
+.amount{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:18px;
+color:#5FAAD6;
+}
+
+.weltxt1{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:20px;
+color:#5FAAD6;
+}
+
+.copy{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:10px;
+color:#747474;
+}
+
+.head_txt{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:20px;
+font-weight:bold;
+color:#226DA2;
+}
+
+.head_txt1{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:16px;
+font-weight:bold;
+color:#226DA2;
+}
+
+.amount1{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:22px;
+font-weight:bold;
+color:#FF8200;
+}
+
+.read{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:11px;
+font-weight:bold;
+text-decoration:underline;
+color:#FF8200;
+}
+
+.content3{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:9px;
+font-weight:bold;
+color:#000000;
+}
+.form1
+{border:1px solid #000000;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:10px;
+color:#000000;
+}
+.send{
+background-image:url(image/submit.jpg);
+background-repeat:no-repeat;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:10px;
+width:82px;
+height:19px;
+}
+.content5{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:10px;
+font-weight:bold;
+color:#000000;
+}
+
+.content6{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;
+font-weight:bold;
+color:#FF4800;
+}
+
+.content7{
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:9px;
+text-decoration:underline;
+color:#4F4F4F;
+}

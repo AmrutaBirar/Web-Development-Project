@@ -1,0 +1,403 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <title>Central Valley Technology</title>
+    <link href="cvtech.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+	/* <![CDATA[ */
+	function checkForNumber(fieldValue) {
+	    var numberCheck = isNaN(fieldValue)
+	    if (numberCheck == true) {
+		window.alert("You must enter a numeric value!");
+		return false;
+	    }
+	    else
+		return true;
+	}
+	function confirmPassword() {
+	    if (document.forms[0].password_confirm.value != document.forms[0].password.value) {
+		//code	
+		window.alert("You didnt enter the same password!");
+		document.forms[0].password.focus();
+	    }
+	}
+	function billAutomatically() {
+	    //code
+	    for (var i =0;i < document.forms[0].delivery.length;i++){
+		if (document.forms[0].delivery[i].checked==true) {
+		    document.forms[0].delivery[i].checked=false;
+		    break;
+		}
+	    }
+	}
+	function billByIssue() {
+	    
+	    for (var i= 0;i < document.forms[0].autoRenew.length;i++){
+		if (document.forms[0].autoRenew[i].checked==true) {
+		    document.forms[0].autoRenew[i].checked=false;
+		    break;
+		}
+		
+	    }
+	}
+	function sameShippingInfo(){
+	    if (document.forms[0].elements[5].checked == true) {
+		document.forms[0].name_shipping.value = document.forms[0].name_billing.value;
+		document.forms[0].address_shipping.value = document.forms[0].address_billing.value;
+		document.forms[0].city_shipping.value = document.forms[0].city_billing.value;
+		document.forms[0].state_shipping.value = document.forms[0].state_billing.value;
+		document.forms[0].zip_shipping.value = document.forms[0].zip_billing.value;
+		
+	    }
+	    else{
+		document.forms[0].name_shipping.value = "";
+		document.forms[0].address_shipping.value = "";
+		document.forms[0].city_shipping.value = "";
+		document.forms[0].state_shipping.value = "";
+		document.forms[0].zip_shipping.value = "";
+	    }
+	}
+	function addJournal() {
+	   
+		if (document.forms[0].elements[31].value == "") {
+		   window.alert("You must enter a journal name.");
+		}
+		else{
+		    if (document.forms[0].journals.options[0] && document.forms[0].journals.options[0].value == "none") {
+			document.forms[0].journals.options[0] = null;
+		    }
+		    var journal = new Option();
+		    journal.text = document.forms[0].elements[31].value;
+		    journal.value = document.forms[0].elements[31].value;
+		    nextItem = document.forms[0].journals.length;
+		    document.forms[0].journals.options[nextItem] = journal;
+		    document.forms[0].elements[31].value = "";
+		    
+		    }
+		}
+	function deleteJournal() {
+	    var selectedItem = document.forms[0].journals.selectedIndex;
+	    if (selectedItem == -1) {
+		window.alert("You must select a journal name in the list");
+	    }
+	    else{
+		document.forms[0].journals.remove(selectedItem);
+	    }
+		
+	}
+	function changeJournal() {
+	    //code
+	    var selectedItem = document.forms[0].journals.selectedIndex;
+	     if (selectedItem == -1) {
+		window.alert("You must select a journal name in the list");
+	    }
+	    else{
+		document.forms[0].journals.options[selectedItem].value = document.forms[0].elements[31].value;
+		document.forms[0].journals.options[selectedItem].text = document.forms[0].elements[31].value;
+	    }
+		
+	    
+	}
+	function confirmSubmit(){
+	    var submitForm = window.confirm("Are you sure you want to submit the form?");
+	    if (document.forms[0].name_billing.value == ""
+		|| document.forms[0].address_billing.value == ""
+		|| document.forms[0].city_billing.value == ""
+		|| document.forms[0].state_billing.value == ""
+		|| document.forms[0].zip_billing.value == "") {
+		window.alert("You must enter your billing information before submitting.");
+		return false;
+	    }
+	    else if (document.forms[0].name_shipping.value == ""
+		|| document.forms[0].address_shipping.value == ""
+		|| document.forms[0].city_shipping.value == ""
+		|| document.forms[0].state_shipping.value == ""
+		|| document.forms[0].zip_shipping.value == "") {
+		window.alert("You must enter your shipping information before submitting.");
+		return false;
+	    }
+	    else if (document.forms[0].area.value == ""
+		|| document.forms[0].exchange.value == ""
+		|| document.forms[0].phone.value == "") {
+		window.alert("You must enter your phone information before submitting.");
+		return false;
+		
+	    }
+	    else if (document.forms[0].userName.value == "") {
+		window.alert("You must enter your username before submitting.");
+		return false;
+	    }
+	    else if (document.forms[0].password.value == ""|| document.forms[0].password_confirm.value == "") {
+		window.alert("You must enter your password before submitting.");
+		return false;
+	    }
+	    var deliverySelected = false;
+	    for (var i = 0;i<4;++i){
+		if (document.forms[0].delivery[i].checked == true) {
+		    deliverySelected = true;
+		    break;
+		}
+	    }
+	    for (var j=0;j<2;j++){
+		if (document.forms[0].autoRenew[j].checked == true) {
+		    deliverySelected = true;
+		    break;
+		}
+	    }
+	    
+	    if (deliverySelected != true) {
+		//code
+		window.alert("You must select a delivery rate option");
+		return false;
+	    }
+	    for(var k =0;k<document.forms[0].journals.length;++k){
+		document.forms[0].journals.options[k].selected = true;
+	    }
+	    return true;
+	}
+	function confirmReset(){
+	    var resetForm = window.confirm("Are you sure you want to reset the form?");
+	    if (resetForm == true) {
+		return resetForm;
+	    return false;
+	    }
+	}
+	/* ]]> */
+    </script>
+</head>
+<body>
+    <div class="c9">
+        <table border="0" cellpadding="0" cellspacing="0" class="c1" width="780">
+            <tr>
+                <td height="19" colspan="3">
+                    <img border="0" src="Images/cmpnylogo.gif" width="313" height="45" alt="Visual formatting image" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <img border="0" src="Images/blckwhtstrp.gif" width="780" height="7" alt="Visual formatting image" />
+                </td>
+            </tr>
+            <tr>
+                <td class="c2" height="19" colspan="3" align="right">
+                    <table border="0" cellpadding="0" cellspacing="0" class="c1">
+                        <tr>
+                            <td>
+                                <img border="0" src="Images/cmpny.gif" width="58" height="31" alt="Visual formatting image" />
+                            </td>
+                            <td>
+                                <img border="0" src="Images/prds.gif" width="64" height="31" alt="Visual formatting image" />
+                            </td>
+                            <td>
+                                <img border="0" src="Images/srvc.gif" width="59" height="31" alt="Visual formatting image" />
+                            </td>
+                            <td>
+                                <img border="0" src="Images/chnprt.gif" width="110" height="31" alt="Visual formatting image" />
+                            </td>
+                            <td>
+                                <img border="0" src="Images/spprt.gif" width="54" height="31" alt="Visual formatting image" />
+                            </td>
+                            <td>
+                                <img border="0" src="Images/lgn.gif" width="95" height="31" alt="Visual formatting image" />
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" height="4">
+                    <img border="0" src="Images/blustrp.gif" width="780" height="4" alt="Visual formatting image" />
+                </td>
+            </tr>
+            <tr>
+                <td height="166">
+                    <img border="0" src="Images/smn1.jpg" width="265" height="166" alt="Visual formatting image" />
+                </td>
+                <td height="166">
+                    <img border="0" src="Images/smn2.jpg" width="255" height="166" alt="Visual formatting image" />
+                </td>
+                <td height="166">
+                    <img border="0" src="Images/smn3.jpg" width="260" height="166" alt="Visual formatting image" />
+                </td>
+            </tr>
+            <tr>
+                <td height="35">
+                    <img border="0" src="Images/smn1a.jpg" width="265" height="35" alt="Visual formatting image" />
+                </td>
+                <td height="35">
+                    <img border="0" src="Images/smn2a.jpg" width="255" height="35" alt="Visual formatting image" />
+                </td>
+                <td height="35">
+                    <img border="0" src="Images/smn3a.jpg" width="260" height="35" alt="Visual formatting image" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" height="31">
+                    <img border="0" src="Images/orngblckstrp.gif" width="780" height="31" alt="Visual formatting image" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">
+                    <img border="0" src="Images/grystrp.gif" width="780" height="7" alt="Visual formatting image" />
+                </td>
+            </tr>
+            <tr>
+                <td height="19" colspan="3">
+                <div class="c10">
+                    <!--[Add code here]-->
+		    <h1>Technology Journal Subscription Form</h1>
+		    <h2>Customer Information</h2>
+		    <form action = "FormProcessor.html" method="get"
+			  enctype="application/x-www-form-urlencoded"
+			  onsubmit="return confirmSubmit();"
+			  onreset="return confirmReset();">
+		    <table border="0">
+			<tr>
+			    <td valign="top">
+				<h3>Billing Information</h3>
+				<p>
+				    Name<br />
+				    <input type="text" name="name_billing" size="56" />
+				</p>
+				<p>
+				    Address<br />
+				    <input type="text" name="address_billing" size="56" />
+				</p>
+				<p>
+				    City, State, Zip<br />
+				    <input type="text" name="city_billing" size="34" />
+				    <input type="text" name="state_billing" size="2" maxlength = "2"/>
+				    <input type="text" name="zip_billing" size="10" maxlength = "10" onblur="return checkForNumber(this.value)" />
+				</p>
+				<p>
+				    <input type="checkbox" onclick="sameShippingInfo();" /> Same Shipping Information 
+				</p>
+			    </td>
+			    <td>&nbsp;</td>
+			    <td valign="top">
+				<h3>Shipping Information</h3>
+				<p>
+				    Name<br />
+				    <input type="text" name="name_shipping" size="56" />
+				</p>
+				<p>
+				    Address<br />
+				    <input type="text" name="address_shipping" size="56" />
+				</p>
+				<p>
+				    City, State, Zip<br />
+				    <input type="text" name="city_shipping" size="34" />
+				    <input type="text" name="state_shipping" size="2" maxlength = "2"/>
+				    <input type="text" name="zip_shipping" size="10" maxlength = "5" onblur="return checkForNumber(this.value)" />
+				</p>
+			    </td>
+			</tr>
+		    </table>
+		    <p>
+			Telephone
+		    </p>
+		    <p>
+			(<input type="text" name ="area"
+			size = "3" maxlength = "3" onblur="return checkForNumber(this.value)"/>)
+			<input type = "text" name="exchange"
+			       size="3" maxlength = "3" onblur="return checkForNumber(this.value)"/>
+			<input type = "text" name="phone"
+			       size="4" maxlength = "4" onblur="return checkForNumber(this.value)" />
+			
+		    </p>
+		    
+		    <p>
+			Username<br />
+			<input type="text" name="userName" size="50" />
+		    </p>
+		    <p>
+			Password<br />
+			<input type="password" name="password" size="50" />
+		    </p>
+		    <p>
+			Confirm password<br />
+			<input type="password" name = "password_confirm"
+			       size="50" onblur="confirmPassword();" />
+		    </p>
+		    <h3>
+			Delivery Rates
+		    </h3>
+		    <table border="0">
+			<colgroup align="left" width="100" />
+			<colgroup span="4" align="center" width="100" />
+			<tr>
+			    <th>6 issues</th>
+			    <th>12 issues</th>
+			    <th>18 issues</th>
+			    <th>24 issues</th>
+			</tr>
+			<tr>
+			    <td><input type="radio" name="delivery" value="17.50" onclick = "billByIssue"/>$17.50</td>
+			    <td><input type="radio" name="delivery" value="26.95" onclick = "billByIssue"/>$26.95</td>
+			    <td><input type="radio" name="delivery" value="32.90" onclick = "billByIssue"/>$32.90</td>
+			    <td><input type="radio" name="delivery" value="46.00" onclick = "billByIssue"/>$46.00</td>
+			</tr>
+		    </table>
+		    <p>
+			<strong>Automatic Renewal</strong>:
+			<input type="radio" name = "autoRenew"
+			       onclick="billAutomatically();" />
+			Monthly($8.95)
+			<input type="radio" name="autoRenew"
+			       onclick="billAutomatically();" />
+			Yearly($19.95)
+		    </p>
+		    <p>
+			What technologies are you intrested in? 
+		    </p>
+		    <input type="checkbox" name="technologies"
+			   value="architecture" />Architecture <br />
+		    <input type="checkbox" name="technologies"
+			   value="hardware" />Hardware <br />
+		    <input type="checkbox" name="technologies"
+			   value="open_source" />Open Source <br />
+		    <input type="checkbox" name="technologies"
+			   value="data" />Data management <br />
+		    <input type="checkbox" name="technologies"
+			   value="windows" />Windows <br />
+		    <input type="checkbox" name="technologies"
+			   value="mac" />Macintosh<br />
+		    <input type="checkbox" name="technologies"
+			   value="networking" />Networking<br />
+		    
+		    <p>What is your job title?</p>
+		    <p><select name="jobTitle">
+			<option value="itStaff">IT staff</option>
+			<option value="consultant">Technical Consultant</option>
+			<option value="integrator">Systems integrator</option>
+			<option value="manager">Manager</option>
+			<option value="director">Director</option>
+			<option value="vp">Vice President</option>
+			<option value="seniorManagement">CIO,CTO,CSO,CEO,COO,Chairman,PResident</option>
+			<option value="other">Other</option>
+		    </select></p>
+		    <p>Journal<input type="text" size= "68" /></p>
+		    <p><input type="button" value="Add Journal" onclick = "addJournal();" style="width: 120px" />
+		       <input type="button" value="Delete Journal" onclick = "deleteJournal();" style="width: 120px" />
+			<input type="button" value="Clear List" onclick="document.forms[0].journals.options.length = 0;" style="width: 120px" />
+			<input type="button" value="Change Journal" onclick="changeJournal()" style="width: 120px" /></p>
+		    <p><select name="journals" multiple="multiple" size="10" style="width: 500px">
+		    <option value="none">Enter the technologies journals you subscribe to</option></select></p>
+		    
+		    <p><input type = "submit" value="Subscribe" />&nbsp;
+		    <input type="reset" /></p>
+		    </form>
+		</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="c5" height="19" colspan="3"></td>
+            </tr>
+        </table>
+    </div>
+    <script type="text/javascript" src="../../validation.js">
+    
+    </script>  
+</body>
+</html>
